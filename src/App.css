@@ -4,3 +4,10 @@
 .one-country:active {
   outline: 2px gray solid;
 }
+.fixed-center {
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+}

@@ -39,11 +39,13 @@ const CountriesPage = () => {
             />
           ))}
         </ul>
-        <div className="col-9">
+        <div className="col-8 fixed-center">
           {countryCode ? (
             <OneCountryInfo Alpha3Code={countryCode} />
           ) : (
-            <p className='fs-4 mt-5 d-block text-center'>Select a country to get information about it</p>
+            <p className="fs-4 mt-5 d-block text-center">
+              Select a country to get information about it
+            </p>
           )}
         </div>
       </div>
