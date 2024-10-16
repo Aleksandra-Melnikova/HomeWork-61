@@ -43,7 +43,7 @@ const CountriesPage = () => {
           {countryCode ? (
             <OneCountryInfo Alpha3Code={countryCode} />
           ) : (
-            <p>Select a country to get information about it</p>
+            <p className='fs-4 mt-5 d-block text-center'>Select a country to get information about it</p>
           )}
         </div>
       </div>
