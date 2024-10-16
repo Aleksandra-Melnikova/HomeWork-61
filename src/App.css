@@ -2,5 +2,5 @@
   background-color: lightgray;
 }
 .one-country:active {
-outline:2px gray solid;
+  outline: 2px gray solid;
 }

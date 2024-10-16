@@ -1,35 +1,26 @@
+import React from "react";
+import OneCountry from "../OneCountry/OneCountry.tsx";
+import { ICountry } from "../../types";
+interface IProps {
+  allCountries: ICountry[];
+  onCLick: () => void;
+}
 
-// import OneCountry from '../OneCountry/OneCountry.tsx';
-// import React from 'react';
-// import { ICountry } from '../../types';
-//
-//
-// const ListOfCountry:React.FC<ICountry[]> = ({allCountries}) => {
+const ListOfCountry: React.FC<IProps> = ({ allCountries, onCLick }) => {
+  return (
+    <div>
+      <ul className="w-25 mt-2 p-3 col-3 list-group">
+        {allCountries.map((country) => (
+          <OneCountry
+            onClick={onCLick}
+            key={country.alpha3Code}
+            name={country.name}
+            alpha3Code={country.alpha3Code}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   const getPostById = async ()=>{
-  //     try{
-  //       const responseRequest:{data:APIPost} = await axios<APIPost>(URL_TO_GET_ONE_POST + id);
-  //       const postsResponse = responseRequest.data;
-  //       setPost(postsResponse);
-  //       setLoading(false);
-  //
-  //     }catch (e){
-  //       console.error(e);
-  //       setLoading(false);
-  //     }
-  //
-  //   };
-  //   if(id !==null){void getPostById();}
-  //
-  // }, [id]);
-
-
-
-//   return (
-//
-//   );
-// };
-
-// export default ListOfCountry;
+export default ListOfCountry;
