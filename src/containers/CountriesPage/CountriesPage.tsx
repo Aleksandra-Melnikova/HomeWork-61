@@ -7,7 +7,7 @@ import OneCountryInfo from '../../components/OneCountryInfo/OneCountryInfo.tsx';
 
 
 const CountriesPage = () => {
-  const[countryCode, setCountryCode] = useState('');
+  const[countryCode, setCountryCode] = useState<null|string>(null);
   const [allCountries, setAllCountries] = useState<ICountry[]>([]);
   const fetchData = useCallback(async () => {
     const responseRequest:{data:ICountry[]} = await axios<ICountry[]>(BASE_URL + ALL_COUNTRIES_URL);
@@ -35,7 +35,9 @@ const CountriesPage = () => {
           }
         </ul>
         <div className='col-9'>
-          <OneCountryInfo Alpha3Code={countryCode}/>
+          {countryCode ? <OneCountryInfo Alpha3Code={countryCode}/> : <p>
+            Select a country to get information about it</p>}
+
         </div>
       </div>
     </div>
