@@ -3,6 +3,7 @@ import { ICountry } from '../../types';
 import axios from 'axios';
 import { ALL_COUNTRIES_URL, BASE_URL } from '../../constans.ts';
 import OneCountry from '../../components/OneCountry/OneCountry.tsx';
+import OneCountryInfo from '../../components/OneCountryInfo/OneCountryInfo.tsx';
 
 
 const CountriesPage = () => {
@@ -19,7 +20,7 @@ const CountriesPage = () => {
     });
     setAllCountries(countryResponse);
   },[]);
-  console.log(allCountries);
+
   useEffect(() => {
     void fetchData();
   },[fetchData]);
@@ -33,6 +34,9 @@ const CountriesPage = () => {
           ))
           }
         </ul>
+        <div className='col-9'>
+          <OneCountryInfo Alpha3Code={countryCode}/>
+        </div>
       </div>
     </div>
   );
